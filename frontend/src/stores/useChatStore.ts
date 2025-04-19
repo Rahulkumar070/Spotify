@@ -23,7 +23,10 @@ interface ChatStore {
 }
 
 const baseURL =
-  import.meta.env.MODE === "https://spotify-backend-ky5s.onrender.com";
+  import.meta.env.MODE === "development"
+    ? "http://localhost:4000"
+    : "https://spotify-backend-ky5s.onrender.com";
+
 
 const socket = io(baseURL, {
   autoConnect: false,
