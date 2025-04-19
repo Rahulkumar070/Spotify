@@ -29,10 +29,14 @@ initializeSocket(httpServer);
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000", // for local dev
+      "https://spotify-frontend-pkyg.onrender.com", // for deployed frontend
+    ],
     credentials: true,
   })
 );
+
 
 app.use(express.json()); // to parse req.body
 app.use(clerkMiddleware()); // this will add auth to req obj => req.auth
