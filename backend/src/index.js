@@ -33,6 +33,7 @@ app.use(
       "http://localhost:3000", // for local dev
       "https://spotify-frontend-pkyg.onrender.com", // for deployed frontend
     ],
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
